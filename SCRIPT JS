@@ -1,0 +1,11 @@
+// Add JavaScript functionality if needed
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Add code to handle form submission (e.g., send data to server)
+        alert('Form submitted!'); // Temporary alert
+    });
+});
