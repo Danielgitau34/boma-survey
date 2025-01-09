@@ -52,3 +52,26 @@ contactForm.addEventListener('submit', async function (event) {
         alert('An error occurred while submitting the form.');
     }
 });
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+    user: 'your_email@gmail.com',
+    pass: 'your_email_password',
+  },
+});
+
+let mailOptions = {
+  from: 'your_email@gmail.com',
+  to: 'recipient_email@gmail.com',
+  subject: 'Test Email',
+  text: 'This is a test email sent from Node.js!',
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    return console.error('Error: ', error);
+  }
+  console.log('Email sent: ', info.response);
+});

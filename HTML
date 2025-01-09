@@ -36,13 +36,13 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
-        <!-- Display featured projects with images and descriptions -->
+        <!--  featured projects with images and descriptions -->
         <div class="project">
-            <img src="project1.jpg" alt="Project 1">
+            <img src="https://www.gettyimages.com/photos/survey" alt="Project 1">
             <p>Project 1 Description</p>
         </div>
         <div class="project">
-            <img src="project2.jpg" alt="Project 2">
+            <img src="https://www.gettyimages.com/photos/survey" alt="Project 2">
             <p>Project 2 Description</p>
         </div>
         <!-- Add more projects as needed -->
@@ -79,7 +79,7 @@
     <style>
         body {
             background: url('https://imgs.search.brave.com/R2bnYmaPFO1VZeTPd7SMNNMVY5XH2wCXPCsUh8hwdSI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTIw/MDAzNzE0L3Bob3Rv/L2VuZ2luZWVycy1h/dC13b3JrLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1xYzdB/UlNxZ1RaNXlmSlBN/ZUdDZGR1SDcxZy1o/M3EwZmpVZVJ6MmxP/YXhRPQ') center/cover no-repeat;
-            background-color: #00000020; /* Fallback color */
+            background-color: #0000000d; /* Fallback color */
             height: 100vh; /* Full height */
             margin: 0;
         }
@@ -95,3 +95,26 @@
     <h1>Welcome to BOMA WORLD</h1>
 </body>
 </html>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+  })();
+
+  function sendEmail() {
+    var templateParams = {
+      name: 'boma survey',
+      email: 'boma.survey@gmail.com',
+      message: 'This is a test message from BOMA WORLD!',
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+      }, function (error) {
+        console.error('FAILED...', error);
+      });
+  }
+</script>
+
+<button onclick="sendEmail()">Send Email</button>
